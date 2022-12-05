@@ -1,4 +1,4 @@
-# My FIrst Game with React Native
+# My First Game with React Native
 
 ## 🚀 How to play
 
