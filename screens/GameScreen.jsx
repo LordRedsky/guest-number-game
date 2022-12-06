@@ -23,7 +23,7 @@ let minBoundary = 1;
 let maxBoundary = 100;
 
 const GameScreen = ({ userNumber, onGameOver }) => {
-    const initialGuess = generateRandomBetween(minBoundary, maxBoundary, userNumber);
+    const initialGuess = generateRandomBetween(1, 100, userNumber);
     const [currentGuess, setCurrentGuess] = useState(initialGuess)
     const [guessRounds, setGuessRounds] = useState([initialGuess])
 
@@ -44,7 +44,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 
         //! VALIDATION CHECK FOR WRONG DIRECTION
         if ((direction === 'lower' && currentGuess < userNumber) || (direction === 'higher' && currentGuess > userNumber)) {
-            Alert.alert("Don't lie!, 'You know that this is wrong...", [{ text: "Sorry!", style: "cancel" }])
+            // console.log('wrong');
+            Alert.alert(
+                "Don't lie!",
+                "You know that this is wrong...",
+                [{ text: "Sorry!", style: "cancel" }])
             return;
         }
 
